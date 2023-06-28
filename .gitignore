@@ -1,0 +1,30 @@
+# lock
+*.lock
+
+# executables
+*.swf
+*.air
+*.ipa
+*.apk
+hugo.exe
+hugo.darwin
+hugo.linux
+
+# Hugo
+public/
+resources/
+
+# Apache
+.htpassed
+
+# Logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# AWS
+.aws-credentials.json
+.awspublish*
