@@ -1,7 +1,7 @@
 ---
 title: "Carve out a corner with Hugo and Github"
 date: 2023-06-28T17:30:01-07:00
-draft: true
+draft: false
 ---
 # Overview
 Sometimes it takes a gym membership to embark on lifting weights, sometimes it takes signing up for a seminar to start reading the bookmarked arXiv papers, sometimes it takes a virtual publishing house to begin writing. 
@@ -70,7 +70,7 @@ Edit about.md using vim or other tools of choice.
 
     cd mycorner
     hugo server
-Open the generated link in your web browser to preview. 
+Open the generated link http://localhost:1313/ in your web browser to preview. 
 
 ## 6. Host on GitHub 
 
@@ -107,4 +107,17 @@ Add more to the list as you go, such as executables, runtime data, or credential
 
 Follow instructions [here](https://gohugo.io/hosting-and-deployment/hosting-on-github/)
 
+## Future workflows
+    hugo server -D
+    hugo server --buildDrafts
+    hugo -D
+    hugo --buildDrafts
+When creating content, the yaml by default includes tag `draft:true`.  Use flag `-D` or `--buildDrafts` to preview or generate the drafts in the public folder. When ready to publish the drafts, you can set the tag as `draft:false` or delete the tag. 
 
+Alternatively, you can set the `date` to a future date for drafts. Use flag `--buildFuture` in testing and site generation.  
+
+Another useful tag is `expiryDate`. Once set, stale posts are exluded from the build. Use flag `--buildExpired` to view them. 
+
+Finally, flags can be stacked to view all past, current and future drafts or posts. 
+
+Fancier, you can customize the defaults by using archetypes. 
